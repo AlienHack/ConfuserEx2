@@ -48,9 +48,9 @@ namespace Confuser.Core {
 				context.Logger.Debug("Watermarking...");
 				foreach (var module in parameters.Targets.OfType<ModuleDef>()) {
 					var attrRef = module.CorLibTypes.GetTypeRef("System", "Attribute");
-					var attrType = module.FindNormal("ConfusedByAttribute");
+					var attrType = module.FindNormal("DontLookAtMe");
 					if (attrType == null) {
-						attrType = new TypeDefUser("", "ConfusedByAttribute", attrRef);
+						attrType = new TypeDefUser("", "DontLookAtMe", attrRef);
 						module.Types.Add(attrType);
 						marker.Mark(attrType, Parent);
 					}

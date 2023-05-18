@@ -35,7 +35,7 @@ namespace Confuser.Core {
 			var nameAttr = (ProductAttribute)assembly.GetCustomAttributes(typeof(ProductAttribute), false)[0];
 			var verAttr = (InformationalAttribute)assembly.GetCustomAttributes(typeof(InformationalAttribute), false)[0];
 			var cpAttr = (CopyrightAttribute)assembly.GetCustomAttributes(typeof(CopyrightAttribute), false)[0];
-			Version = string.Format("{0} {1}", nameAttr.Product, verAttr.InformationalVersion);
+			Version = string.Format("{0} {1}", "CFX", verAttr.InformationalVersion);
 			Copyright = cpAttr.Copyright;
 
 			AppDomain.CurrentDomain.AssemblyResolve += (sender, e) => {
